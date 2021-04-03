@@ -10,8 +10,8 @@ static const char *fonts[]          = { "Monospace:pixelsize=18" };
 
 static const char *colors[][3]      = {
 	/*                Fg         Bg         Border   */
-	[SchemeNorm]  = { "#ebdbb2", "#282828", "#282828" },
-	[SchemeTitle] = { "#282828", "#282828", "#282828" },
+	[SchemeNorm]  = { "#ebdbb2", "#1d2021", "#1d2021" },
+	[SchemeTitle] = { "#1d2021", "#1d2021", "#1d2021" },
 	[SchemeSel]   = { "#ebdbb2", "#076678", "#076678" },
 };
 
@@ -63,7 +63,7 @@ static Key keys[] = {
 	{ MODKEY,               XK_r,               spawn,          SHCMD("prompt 'Reboot?' 'doas reboot'") },
 
     /* Sound */
-    { MODKEY,               XK_s,               spawn,          SHCMD("pavucontrol") },
+    { MODKEY,               XK_s,               spawn,          SHCMD("$TERMINAL -e pulsemixer") },
     { MODKEY|ShiftMask,     XK_m,               spawn,          SHCMD("volctrl toggle") },
     { MODKEY,               XK_equal,           spawn,          SHCMD("volctrl up") },
     { MODKEY|ShiftMask,     XK_equal,           spawn,          SHCMD("volctrl up 15") },
