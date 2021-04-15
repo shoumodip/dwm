@@ -1,18 +1,18 @@
 /* See LICENSE file for copyright and license details. */
 
 /* Appearance */
-static const unsigned int borderpx  = 2;        /* border pixel of windows */
-static const unsigned int snap = 0;        /* snap pixel */
-static const int showbar = 1;        /* 0 means no bar */
-static const int topbar = 1;        /* 0 means bottom bar */
+static const unsigned int borderpx = 2; /* border pixel of windows */
+static const unsigned int snap     = 0; /* snap pixel */
+static const int showbar           = 1; /* 0 means no bar */
+static const int topbar            = 1; /* 0 means bottom bar */
 
 static const char *fonts[]          = { "Monospace:pixelsize=18" };
 
 static const char *colors[][3]      = {
 	/*                Fg         Bg         Border   */
-	[SchemeNorm]  = { "#ebdbb2", "#1d2021", "#1d2021" },
-	[SchemeTitle] = { "#1d2021", "#1d2021", "#1d2021" },
-	[SchemeSel]   = { "#ebdbb2", "#076678", "#076678" },
+	[SchemeNorm]  = { "#eee8d5", "#101010", "#101010" },
+	[SchemeSel]   = { "#101010", "#268bd2", "#2aa198" },
+	[SchemeTitle] = { "#101010", "#101010", "#101010" },
 };
 
 /* Tags */
@@ -22,15 +22,15 @@ static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
 static const Rule rules[] = {0};
 
 /* Layouts */
-static const float mfact = 0.50; /* Master window size */
-static const int nmaster = 1; /* Number of master windows */
-static const int resizehints = 0; /* Don't respect size hints in tiled resizals */
+static const float mfact     = 0.50; /* Master window size */
+static const int nmaster     = 1;    /* Number of master windows */
+static const int resizehints = 0;    /* Don't respect size hints in tiled resizals */
 
 static const Layout layouts[] = {
 	/* Symbol     Function */
-	{ "[]=",      tile }, /* Tiled layout is default */
-	{ "[M]",      monocle }, /* Floating layout */
-	{ "><>",      NULL },
+	{ "[]=",      tile },    /* Tiled layout */
+	{ "[M]",      monocle }, /* Monocle layout */
+	{ "><>",      NULL },    /* Floating layout */
 };
 
 /* Keymap builders */
@@ -59,18 +59,19 @@ static Key keys[] = {
     { 0,                    XK_Print,           spawn,          SHCMD("shot 'full screen'") },
 
     /* System actions */
-	{ MODKEY,               XK_BackSpace,       spawn,          SHCMD("prompt 'Shutdown?' 'doas shutdown -h now'") },
-	{ MODKEY,               XK_r,               spawn,          SHCMD("prompt 'Reboot?' 'doas reboot'") },
+	{ MODKEY,               XK_BackSpace,       spawn,          SHCMD("prompt 'Shutdown' 'doas shutdown -h now'") },
+	{ MODKEY,               XK_r,               spawn,          SHCMD("prompt 'Reboot' 'doas reboot'") },
 
     /* Sound */
     { MODKEY,               XK_s,               spawn,          SHCMD("$TERMINAL -e pulsemixer") },
-    { MODKEY|ShiftMask,     XK_m,               spawn,          SHCMD("volctrl toggle") },
-    { MODKEY,               XK_equal,           spawn,          SHCMD("volctrl up") },
-    { MODKEY|ShiftMask,     XK_equal,           spawn,          SHCMD("volctrl up 15") },
-    { MODKEY,               XK_minus,           spawn,          SHCMD("volctrl down") },
-    { MODKEY|ShiftMask,     XK_minus,           spawn,          SHCMD("volctrl down 15") },
+    { MODKEY|ShiftMask,     XK_m,               spawn,          SHCMD("volume mute") },
+    { MODKEY,               XK_equal,           spawn,          SHCMD("volume up") },
+    { MODKEY|ShiftMask,     XK_equal,           spawn,          SHCMD("volume up 15") },
+    { MODKEY,               XK_minus,           spawn,          SHCMD("volume down") },
+    { MODKEY|ShiftMask,     XK_minus,           spawn,          SHCMD("volume down 15") },
 
     /* Menus */
+    { MODKEY|ShiftMask,     XK_k,               spawn,          SHCMD("dmenukill") },
     { MODKEY,               XK_u,               spawn,          SHCMD("dmenumount") },
     { MODKEY|ShiftMask,     XK_u,               spawn,          SHCMD("dmenuumount") },
     { ShiftMask,            XK_F6,              spawn,          SHCMD("shot") },
