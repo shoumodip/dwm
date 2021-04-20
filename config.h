@@ -10,9 +10,9 @@ static const char *fonts[]          = { "Monospace:pixelsize=16" };
 
 static const char *colors[][3]      = {
     /*                Fg         Bg         Border   */
-    [SchemeNorm]  = { "#ABB2BF", "#282C34", "#282C34" },
-    [SchemeSel]   = { "#ABB2BF", "#3E4452", "#3E4452" },
-    [SchemeTitle] = { "#ABB2BF", "#282C34", "#282C34" },
+    [SchemeNorm]  = { "#DCDCCC", "#3F3F3F", "#3F3F3F" },
+    [SchemeSel]   = { "#F0DFAF", "#2B2B2B", "#2B2B2B" },
+    [SchemeTitle] = { "#3F3F3F", "#3F3F3F", "#3F3F3F" },
 };
 
 /* Tags */
@@ -46,7 +46,7 @@ static const Layout layouts[] = {
 
 /* Dmenu */
 static char dmenumon[2] = "0";
-static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-p", "Execute", NULL };
+static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-p", "Execute:", NULL };
 
 static Key keys[] = {
     /* Modifier             Key                 Function        Argument */
@@ -55,12 +55,12 @@ static Key keys[] = {
     { MODKEY,               XK_d,               spawn,          {.v = dmenucmd } },
     { MODKEY,               XK_Return,          spawn,          SHCMD("$TERMINAL") },
     { MODKEY,               XK_w,               spawn,          SHCMD("$BROWSER") },
-    { MODKEY,               XK_e,               spawn,          SHCMD("$TERMINAL -e $EDITOR") },
+    { MODKEY,               XK_e,               spawn,          SHCMD("emacs") },
     { 0,                    XK_Print,           spawn,          SHCMD("shot 'full screen'") },
 
     /* System actions */
-    { MODKEY,               XK_BackSpace,       spawn,          SHCMD("prompt 'Shutdown' 'doas shutdown -h now'") },
-    { MODKEY,               XK_r,               spawn,          SHCMD("prompt 'Reboot' 'doas reboot'") },
+    { MODKEY,               XK_BackSpace,       spawn,          SHCMD("prompt 'Shutdown:' 'doas shutdown -h now'") },
+    { MODKEY,               XK_r,               spawn,          SHCMD("prompt 'Reboot:' 'doas reboot'") },
 
     /* Sound */
     { MODKEY,               XK_s,               spawn,          SHCMD("$TERMINAL -e pulsemixer") },
