@@ -6,13 +6,13 @@ static const unsigned int snap     = 0; /* snap pixel */
 static const int showbar           = 1; /* 0 means no bar */
 static const int topbar            = 1; /* 0 means bottom bar */
 
-static const char *fonts[]         = { "Monospace:pixelsize=16:antialias=true:autohint=true" };
+static const char *fonts[]         = { "Monospace:pixelsize=15:antialias=true:autohint=true" };
 
 static const char *colors[][3]     = {
     /*                Fg         Bg         Border   */
-    [SchemeNorm]  = { "#e8e8d3", "#151515", "#151515" },
-    [SchemeSel]   = { "#e8e8d3", "#2c2c2c", "#2c2c2c" },
-    [SchemeTitle] = { "#151515", "#151515", "#151515" },
+    [SchemeNorm]  = { "#D8DEE9", "#2E3440", "#2E3440" },
+    [SchemeSel]   = { "#2E3440", "#81A1C1", "#81A1C1" },
+    [SchemeTitle] = { "#D8DEE9", "#2E3440", "#2E3440" },
 };
 
 /* Tags */
