@@ -55,12 +55,12 @@ static Key keys[] = {
     { MODKEY,               XK_d,               spawn,          {.v = dmenucmd } },
     { MODKEY,               XK_Return,          spawn,          SHCMD("$TERMINAL") },
     { MODKEY,               XK_w,               spawn,          SHCMD("$BROWSER") },
-    { MODKEY,               XK_e,               spawn,          SHCMD("emacs") },
+    { MODKEY,               XK_e,               spawn,          SHCMD("$TERMINAL -e $EDITOR") },
     { 0,                    XK_Print,           spawn,          SHCMD("shot 'full screen'") },
 
     /* System actions */
-    { MODKEY,               XK_BackSpace,       spawn,          SHCMD("prompt 'Shutdown:' 'doas shutdown -h now'") },
-    { MODKEY,               XK_r,               spawn,          SHCMD("prompt 'Reboot:' 'doas reboot'") },
+    { MODKEY,               XK_BackSpace,       spawn,          SHCMD("prompt 'Shutdown:' 'sudo shutdown -h now'") },
+    { MODKEY,               XK_r,               spawn,          SHCMD("prompt 'Reboot:' 'sudo reboot'") },
 
     /* Sound */
     { MODKEY,               XK_s,               spawn,          SHCMD("$TERMINAL -e pulsemixer") },
