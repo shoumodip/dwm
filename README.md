@@ -1,9 +1,9 @@
 # [DWM](https://dwm.suckless.org)
 Dwm is an extremely fast, small, and dynamic window manager for X.
 
-# Quick start
+# Installation
 ```console
-$ sudo make install
+$ make
 ```
 
 # Requirements
