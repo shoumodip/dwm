@@ -74,7 +74,7 @@ static Key keys[] = {
     { MODKEY|ShiftMask,     XK_k,               spawn,          SHCMD("dmenukill") },
     { MODKEY,               XK_u,               spawn,          SHCMD("dmenumount") },
     { MODKEY|ShiftMask,     XK_u,               spawn,          SHCMD("dmenuumount") },
-    { ShiftMask,            XK_F6,              spawn,          SHCMD("shot") },
+    { ShiftMask,            XK_Print,           spawn,          SHCMD("shot") },
 
     /* MUSIC */
     { MODKEY,               XK_m,               spawn,          SHCMD("dmenumpc") },
