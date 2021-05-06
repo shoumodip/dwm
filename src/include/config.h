@@ -46,7 +46,7 @@ static const Layout layouts[] = {
 
 /* Dmenu */
 static char dmenumon[2] = "0";
-static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-p", "Execute:", NULL };
+static const char *dmenucmd[] = { "dmenurun", "-m", dmenumon, NULL };
 
 static Key keys[] = {
     /* Modifier             Key                 Function        Argument */
@@ -64,11 +64,11 @@ static Key keys[] = {
 
     /* Sound */
     { MODKEY,               XK_s,               spawn,          SHCMD("$TERMINAL -e pulsemixer") },
-    { MODKEY|ShiftMask,     XK_m,               spawn,          SHCMD("volume mute") },
-    { MODKEY,               XK_equal,           spawn,          SHCMD("volume up") },
-    { MODKEY|ShiftMask,     XK_equal,           spawn,          SHCMD("volume up 15") },
-    { MODKEY,               XK_minus,           spawn,          SHCMD("volume down") },
-    { MODKEY|ShiftMask,     XK_minus,           spawn,          SHCMD("volume down 15") },
+    { MODKEY|ShiftMask,     XK_m,               spawn,          SHCMD("volctrl mute") },
+    { MODKEY,               XK_equal,           spawn,          SHCMD("volctrl up") },
+    { MODKEY|ShiftMask,     XK_equal,           spawn,          SHCMD("volctrl up 15") },
+    { MODKEY,               XK_minus,           spawn,          SHCMD("volctrl down") },
+    { MODKEY|ShiftMask,     XK_minus,           spawn,          SHCMD("volctrl down 15") },
 
     /* Menus */
     { MODKEY|ShiftMask,     XK_k,               spawn,          SHCMD("dmenukill") },
@@ -77,7 +77,7 @@ static Key keys[] = {
     { ShiftMask,            XK_F6,              spawn,          SHCMD("shot") },
 
     /* MUSIC */
-    { MODKEY,               XK_m,               spawn,          SHCMD("$TERMINAL -e ncmpcpp") },
+    { MODKEY,               XK_m,               spawn,          SHCMD("dmenumpc") },
 
     { MODKEY,               XK_comma,           spawn,          SHCMD("mpc prev") },
     { MODKEY,               XK_period,          spawn,          SHCMD("mpc next") },
@@ -130,15 +130,15 @@ static Key keys[] = {
     { MODKEY,               XK_Tab,             view,           {0} },
     { MODKEY,               XK_0,               view,           {.ui = ~0 } },
     { MODKEY|ShiftMask,     XK_0,               tag,            {.ui = ~0 } },
-    TAGKEYS(                XK_1,                      0)
-    TAGKEYS(                XK_2,                      1)
-    TAGKEYS(                XK_3,                      2)
-    TAGKEYS(                XK_4,                      3)
-    TAGKEYS(                XK_5,                      4)
-    TAGKEYS(                XK_6,                      5)
-    TAGKEYS(                XK_7,                      6)
-    TAGKEYS(                XK_8,                      7)
-    TAGKEYS(                XK_9,                      8)
+    TAGKEYS(                XK_1,               0)
+    TAGKEYS(                XK_2,               1)
+    TAGKEYS(                XK_3,               2)
+    TAGKEYS(                XK_4,               3)
+    TAGKEYS(                XK_5,               4)
+    TAGKEYS(                XK_6,               5)
+    TAGKEYS(                XK_7,               6)
+    TAGKEYS(                XK_8,               7)
+    TAGKEYS(                XK_9,               8)
 };
 
 /* button definitions */
